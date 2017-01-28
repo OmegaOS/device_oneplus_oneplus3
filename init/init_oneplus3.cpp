@@ -105,20 +105,29 @@ void load_op3t(const char *model) {
 }
 
 void vendor_load_properties() {
+    char device[PROP_VALUE_MAX];
     char rf_version[PROP_VALUE_MAX];
+    int rc;
+
+    rc = property_get("ro.rr.device", device, NULL);
+    if (!rc || strncmp(device, "oneplus3", PROP_VALUE_MAX))
+        return;
 
     property_get("ro.boot.rf_version", rf_version, NULL);
 
     if (strstr(rf_version, "11") || strstr(rf_version, "31")) {
         /* Chinese/America */
-        load_op3("ONEPLUS A3000");
+        load_op3("ONEPLUS 3");
     } else if (strstr(rf_version, "21")) {
         /* Asia/Europe */
-        load_op3("ONEPLUS A3003");
-    } else if (strstr(rf_version, "12") || strstr(rf_version, "22")
-                || strstr(rf_version, "32")) {
+        load_op3("ONEPLUS 3");
+    } else if (strstr(rf_version, "12") || strstr(rf_version, "32")) {
+        /* Chinese/America */
         load_op3t("ONEPLUS 3T");
-    }
+    } else if (strstr(rf_version, "22")) {
+        /* Asia/Europe */
+        load_op3t("ONEPLUS 3T");
+ }
 
     init_alarm_boot_properties();
 }
