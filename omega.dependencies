@@ -1,26 +1,32 @@
 [
   {
-    "repository": "android_device_oppo_common",
+    "remote":     "github",
+    "repository": "phantom-1402/android_device_oppo_common",
     "target_path": "device/oppo/common"
+    "branch":      "omega"
   },
   {
-    "repository": "android_kernel_oneplus_msm8996",
+    "remote":     "github",
+    "repository": "phantom-1402/android_device_oneplus_common",
+    "target_path": "device/oneplus/common"
+    "branch":      "omega"
+  },
+  {
+    "remote":     "github",
+    "repository": "lineageos/android_kernel_oneplus_msm8996",
     "target_path": "kernel/oneplus/msm8996"
+    "branch":      "cm-14.1"
   },
   {
-    "repository": "android_packages_resources_devicesettings",
+    "remote":     "github",
+    "repository": "phantom-1402/vendor__oneplus_oneplus3",
+    "target_path": "vendor/oneplus"
+    "branch":      "nougat"
+  },
+  {
+    "remote":     "github",
+    "repository": "lineageos/android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings"
+    "branch":      "cm-14.1"
   },
-  {
-    "repository": "android_vendor_nxp-nfc_opensource_frameworks",
-    "target_path": "vendor/nxp-nfc/opensource/frameworks"
-  },
-  {
-    "repository": "android_vendor_nxp-nfc_opensource_libnfc-nci",
-    "target_path": "vendor/nxp-nfc/opensource/libnfc-nci"
-  },
-  {
-    "repository": "android_vendor_nxp-nfc_opensource_Nfc",
-    "target_path": "vendor/nxp-nfc/opensource/Nfc"
-  }
 ]
